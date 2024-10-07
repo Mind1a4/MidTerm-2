@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
+  const [value, setValue] = useState('');
+  const [inputvale, setinputValue] = useState('');
+  const [valuesArray, setValuesArray] = useState([]);
+
+  const handleInputValue = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handValue = (e) => {
+    e.preventDefault();
+    setinputValue(value);
+    setValuesArray((perv) => setValuesArray([perv, inputvale]));
+  };
+
   return (
     <>
-      <h1 className="text-3xl font-bold text-center">Midterm 2</h1>
+      <h1 className='text-3xl font-bold text-center'>Midterm 2</h1>
+      <form>
+        <input
+          type='text'
+          value={value}
+          placeholder='input'
+          onChange={handleInputValue}
+        />
+        <button type='submit' onClick={handValue}>
+          btn
+        </button>
+      </form>
+      <p>{valuesArray}</p>
     </>
   );
 }
