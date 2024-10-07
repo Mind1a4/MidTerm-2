@@ -12,7 +12,7 @@ function App() {
   const handValue = (e) => {
     e.preventDefault();
     setinputValue(value);
-    setValuesArray((perv) => setValuesArray([perv, inputvale]));
+    setValuesArray((perv) => setValuesArray([...perv, inputvale]));
   };
 
   return (
