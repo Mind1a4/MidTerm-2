@@ -26,7 +26,7 @@ function App() {
           onChange={handleInputValue}
         />
         <button type='submit' onClick={handValue}>
-          btn
+          btnv
         </button>
       </form>
       <p>{valuesArray}</p>
